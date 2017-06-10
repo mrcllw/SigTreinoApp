@@ -1,0 +1,26 @@
+<ion-view>
+	<ion-content>
+	  <h3>Treino de {{detalheTreino.nome}}</h3>
+    <div class="card">
+  		<div class="row item item-divider">
+        <div class="col col-50">
+          <h3>Exercício</h3>
+        </div>
+        <div class="col col-40">
+          <h3>Execução</h3>
+        </div>
+        <div class="col col-10"></div>
+      </div>
+      <div class="row item item-text-wrap" ng-repeat="atividade in detalheTreino.atividades">
+        <div class="col col-50">{{atividade.exercicio.nome}}</div>
+        <div class="col col-40" ng-if="atividade.serie">{{atividade.serie}} x {{atividade.repeticao}} repetições</div>
+        <div class="col col-40" ng-if="atividade.tempo">{{atividade.tempo}} minutos</div>
+        <div class="col col-10">
+          <button class="button button-positive button-small" ng-click="detalheExercicio(atividade.exercicio)">
+            <i class="ion-eye"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+	</ion-content>
+</ion-view>

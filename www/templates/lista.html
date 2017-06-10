@@ -1,0 +1,19 @@
+<ion-view>
+  <ion-content>
+    <ion-list>
+      <div ng-repeat="ft in fichaTreino">
+
+        <ion-item class="item-stable" ng-click="toggleGroup(ft)" ng-class="{active: isGroupShown(ft)}" >
+          <i class="icon" ng-class="isGroupShown(ft) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            {{ft.dia}}
+        </ion-item>
+
+        <ion-item class="item-accordion" ng-repeat="treino in ft.treino" ng-show="isGroupShown(ft)" ng-click="detalheTreino(treino)">
+            {{treino.nome}}
+        </ion-item>
+        
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
